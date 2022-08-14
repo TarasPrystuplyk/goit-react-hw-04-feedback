@@ -1,7 +1,7 @@
 import { Box } from '../box/Box';
 import { Buttons } from './OptionsStyled';
 
-export const Options = ({ onFeedback, options }) => {
+export const Feedback = ({ onFeedback, options }) => {
   return (
     <Box
       m={0}
@@ -12,12 +12,10 @@ export const Options = ({ onFeedback, options }) => {
       as="ul"
       background="accent"
     >
-      {options.map(button => (
-        <li key={button}>
-          <Buttons type="button" onClick={() => onFeedback(button)}>
-            {button}
-          </Buttons>
-        </li>
+     {options.map(option => (
+        <Buttons key={option} type="button" onClick={onFeedback}>
+          {option}
+        </Buttons>
       ))}
     </Box>
   );
